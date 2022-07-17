@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import UserCard from "../UserCard/UserCard";
 import "./Home.css";
+import { useDispatch } from "react-redux";
+import { fetchUsers } from "../../redux/usersSlice";
 
 function Home() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
+
   return (
     <div className="home container">
       <UserCard />
