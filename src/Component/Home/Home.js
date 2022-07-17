@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import UserCard from "../UserCard/UserCard";
 import "./Home.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../../redux/usersSlice";
 
 function Home() {
   const dispatch = useDispatch();
+  const { totalUsers } = useSelector((state) => state.users);
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -16,7 +17,11 @@ function Home() {
       <UserCard />
 
       <div className="home__buttons flex">
-        <button className="btn text-secondary ff-montserrat">1</button>
+        {Array.from(Array(totalUsers).keys()).map((i) => (
+          <button key={i} className="btn text-secondary ff-montserrat">
+            {i + 1}
+          </button>
+        ))}
       </div>
     </div>
   );
