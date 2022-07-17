@@ -14,7 +14,7 @@
   box-shadow: 0 10px 15px -5px rgba(0, 172, 181, 0.635);
 }
 
-.noUsers {
+.center {
   display: flex;
   justify-content: center;
   align-items: center;

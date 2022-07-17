@@ -2,11 +2,13 @@ import React, { useEffect } from "react";
 import UserCard from "../UserCard/UserCard";
 import "./Home.css";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUserInfo, fetchUsers } from "../../redux/usersSlice";
+import { fetchUserInfo, fetchUsers, STATUSES } from "../../redux/usersSlice";
 
 function Home() {
   const dispatch = useDispatch();
-  const { totalUsers, currentUser } = useSelector((state) => state.users);
+  const { totalUsers, currentUser, status } = useSelector(
+    (state) => state.users
+  );
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -19,12 +21,22 @@ function Home() {
     }
   };
 
+  if (status === STATUSES.LOADING) {
+    return (
+      <div className="center bg-secondary text-secondary">
+        Loading please wait...
+      </div>
+    );
+  }
+
   return (
     <div className="home container">
       {currentUser ? (
         <UserCard user={currentUser} />
       ) : (
-        <div className="noUsers bg-secondary text-secondary">Click any button below to see a user.</div>
+        <div className="center bg-secondary text-secondary">
+          Click any button below to see a user.
+        </div>
       )}
 
       <div className="home__buttons flex" onClick={handleFetchUserInfo}>
