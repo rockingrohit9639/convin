@@ -29,6 +29,14 @@ function Home() {
     );
   }
 
+  if (status === STATUSES.ERROR) {
+    return (
+      <div className="center bg-secondary text-secondary">
+        Something went wrong...
+      </div>
+    );
+  }
+
   return (
     <div className="home container">
       {currentUser ? (
