@@ -1,0 +1,15 @@
+.home__buttons {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  background-color: var(--clr-primary);
+  padding: 1rem 3rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -5px rgba(0, 172, 181, 0.635);
+}
