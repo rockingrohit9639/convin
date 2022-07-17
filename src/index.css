@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +17,7 @@ body {
   background-color: var(--clr-bg-primary);
   width: 100%;
   min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
 }
 
 a {
@@ -41,4 +44,24 @@ a {
   padding-inline: 2em;
   margin-inline: auto;
   max-width: 80rem;
+}
+
+.bg-primary {
+  background-color: var(--clr-bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--clr-bg-secondary);
+}
+
+.text-primary {
+  color: var(--clr-primary);
+}
+
+.text-secondary {
+  color: var(--clr-secondary);
+}
+
+.ff-montserrat {
+  font-family: "Montserrat", sans-serif;
 }
