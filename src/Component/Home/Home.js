@@ -6,7 +6,7 @@ import { fetchUserInfo, fetchUsers } from "../../redux/usersSlice";
 
 function Home() {
   const dispatch = useDispatch();
-  const { totalUsers } = useSelector((state) => state.users);
+  const { totalUsers, currentUser } = useSelector((state) => state.users);
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -21,7 +21,11 @@ function Home() {
 
   return (
     <div className="home container">
-      <UserCard />
+      {currentUser ? (
+        <UserCard user={currentUser} />
+      ) : (
+        <div className="noUsers bg-secondary text-secondary">Click any button below to see a user.</div>
+      )}
 
       <div className="home__buttons flex" onClick={handleFetchUserInfo}>
         {Array.from(Array(totalUsers).keys()).map((i) => (

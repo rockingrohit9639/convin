@@ -13,3 +13,14 @@
   cursor: pointer;
   box-shadow: 0 10px 15px -5px rgba(0, 172, 181, 0.635);
 }
+
+.noUsers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 20vh;
+  margin-block: 1rem;
+  padding-inline: 1rem;
+  text-align: center;
+}
