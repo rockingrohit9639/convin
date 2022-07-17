@@ -2,12 +2,25 @@
   padding: 1rem;
   width: 100%;
   margin-block: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.userCard__id {
+  position: absolute;
+  top: -1rem;
+  right: 0;
+  font-size: 15rem;
+  font-weight: bold;
+  user-select: none;
+  color: #2d3137a6;
 }
 
 .userCard__img {
   width: 10rem;
   aspect-ratio: 1;
   object-fit: cover;
+  z-index: 1;
 }
 
 .userCard__name {

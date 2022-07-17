@@ -4,6 +4,7 @@ import "./UserCard.css";
 function UserCard({ user }) {
   return (
     <div className="userCard flow flex bg-secondary">
+      <div className="userCard__id">{user.id}</div>
       <img src={user.avatar} alt="avatar" className="userCard__img" />
 
       <div className="userCard__info">
